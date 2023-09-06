@@ -15,6 +15,7 @@ def add_task():
     task = input("Enter the task: ")
     # Appends the task the user inputed to the "to_do_list" list above 
     to_do_list.append(task)
+    print(f"Task '{task}' has been successfully added to the to-do list.")
 
 
 def remove_task():
