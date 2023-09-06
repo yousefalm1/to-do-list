@@ -11,6 +11,10 @@ def add_task():
     """
     Function to add a task to the to-do list
     """
+    # User enters the task and the task the user inputed is stored in "task"
+    task = input("Enter the task: ")
+    # Appends the task the user inputed to the "to_do_list" list above 
+    to_do_list.append(task)
 
 
 def remove_task():
@@ -26,3 +30,4 @@ def dispaly_list():
 
 
 
+add_task()
