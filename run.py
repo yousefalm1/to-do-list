@@ -53,6 +53,11 @@ def display_list():
             # After printing each task the count goes up by 1 for the next task
             count += 1
 
-
-
-
+#  Creates an infinite loop until the user chooses to quits
+while True:
+    # Print the options so the user knows what to pick
+    print("\nOptions.")
+    print("1. Add a task")
+    print("2. Remove a task")
+    print("3. Display to-do-list")
+    print("4. Quit")
