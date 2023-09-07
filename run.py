@@ -53,6 +53,11 @@ def display_list():
             # After printing each task the count goes up by 1 for the next task
             count += 1
 
+
+
+def main():
+    display_welcome_message()
+    
 #  Creates an infinite loop until the user chooses to quits
 while True:
     # Print the options so the user knows what to pick
