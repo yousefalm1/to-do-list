@@ -34,11 +34,25 @@ def remove_task():
 
 
 
-def dispaly_list():
+def display_list():
     """
     Function to display the to-do list
     """
+    # Checks if the "to_do_list" is empty, if it is print the statement below
+    if not to_do_list:
+        print("Your to-do list is empty.")
+    # If "to_do_list" is not empty the code below will run
+    else:
+        print("To-DO List:")
+        # This keeps track of the task numbers in the "to_do_list"
+        count = 1
+        # This for loop iterates over each item the user submited in the "to_do_list" and assigns it to "task"
+        for task in to_do_list:
+            # Inside the loop the print line it prints "1. Task 1", "2. Task 2" ....
+            print(f"{count}. {task}")
+            # After printing each task the count goes up by 1 for the next task
+            count += 1
 
 
 
-add_task()
+
