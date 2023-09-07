@@ -61,3 +61,22 @@ while True:
     print("2. Remove a task")
     print("3. Display to-do-list")
     print("4. Quit")
+
+    # The number the user input will be assigned to "Choice"
+    choice = input("Enter Your choice:")
+
+    # Checks what number the user inputed and calls the function linked to that number
+    if choice == "1":
+        # Calls the fuction to add a task
+        add_task()
+    elif choice == "2":
+        # Calls the fuction to remove a task
+        remove_task()
+    elif choice == "3":
+        # Calls the fuction to display tasks
+        display_list()
+    elif choice == "4":
+        # Exit the loop and quit
+        break 
+    else:
+        print("Invalid choice. Please try again.")
