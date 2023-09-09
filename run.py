@@ -13,8 +13,15 @@ def add_task():
     """
     # User enters the task and the task the user inputed is stored in "task"
     task = input("Enter the task: ")
-    # Appends the task the user inputed to the "to_do_list" list above 
-    to_do_list.append(task)
+    # User enter due date for task which is optional
+    due_date = input("Enter the due date (optional) (__/__/__): ")
+    # creates a dictionary to show the task and the due date
+    task_details = {
+        "Task": task,
+        "Due Date": due_date if due_date else "No due date"
+    }
+    # Append the task detials to the to-do list
+    to_do_list.append(task_details)
     print(f"Task '{task}' has been successfully added to the to-do list.")
 
 
@@ -56,8 +63,11 @@ def display_list():
 
 
 def main():
+    """
+    Function to run the to-do list
+    """
     display_welcome_message()
-    
+
 #  Creates an infinite loop until the user chooses to quits
 while True:
     # Print the options so the user knows what to pick
@@ -85,3 +95,6 @@ while True:
         break 
     else:
         print("Invalid choice. Please try again.")
+
+
+main()
