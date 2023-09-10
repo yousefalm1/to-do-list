@@ -1,3 +1,12 @@
+import gspread
+from google.ouath2.service_account import ServiceAccountCredentials
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
 # creates an empty list to store the tasks the user inputs
 to_do_list = []
 
