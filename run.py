@@ -55,6 +55,8 @@ def add_task():
         # Print Success message
         print(f"Tast '{task} has been successfully added to the to-do list and Google Sheets.")
 
+    except Exception as e:
+        print(f"An error occured: {e}")
 
 
 def remove_task():
