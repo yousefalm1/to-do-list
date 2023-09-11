@@ -55,6 +55,7 @@ def add_task():
         # Print Success message
         print(f"Tast '{task} has been successfully added to the to-do list and Google Sheets.")
 
+    #  if an excpetion is raised within the try block it will print "An error occured"
     except Exception as e:
         print(f"An error occured: {e}")
 
@@ -63,9 +64,23 @@ def remove_task():
     """
     Function to remove a task from the to-do list
     """
-    # User enters the task they wish to remove and that will be stored in "task"
-    task = input("Enter the task to remove: ")
-    # checks if the  what the user inputed is in "to_do_list" 
+    try:
+        # User enters the task they wish to remove and that will be stored in "task"
+        task = input("Enter the task to remove: ")
+
+        # Check if the the task is present in the local to-do list and removes it if its present
+
+        # Loops through each item in "to_do_list" one by one
+        for task_detials in to_do_list:
+            # Checks if "Task" value of the task_detials dict is equal to what the user wants to remove 
+            if task_detials["Task"] == task_to_remove:
+                to_do_list.remove(task_detials)
+        
+
+
+
+
+    # checks if the  what the user inputed is in "to_do_list"
     # If the task is present in the "to_do_list" the code below would run which will remove the task
     if task in to_do_list:
         to_do_list_remove(task)
