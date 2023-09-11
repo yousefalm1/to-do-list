@@ -46,10 +46,15 @@ def add_task():
         # Append the task detials to the local to-do list
         to_do_list.append(task_details)
 
+        # Add task and due date to google sheets
+        # Create a list with task and due date
+        task_data = [task, due_date if due_date else "No due date"]
+        # By using append rows to add a new row to the google
+        to_do_list_worksheet.append_rows([task_data]) 
 
-=        
+        # Print Success message
+        print(f"Tast '{task} has been successfully added to the to-do list and Google Sheets.")
 
-    print(f"Task '{task}' has been successfully added to the to-do list.")
 
 
 def remove_task():
