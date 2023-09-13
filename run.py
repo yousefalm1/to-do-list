@@ -118,6 +118,8 @@ def remove_task():
         else:
             print("Task not found in to-do list")
 
+    except Exception as e:
+        print(f"An error occured: {e}")
 
 
 
