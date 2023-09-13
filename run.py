@@ -100,6 +100,23 @@ def remove_task():
         for index in reversed(task_to_remove_indices):
             del to_do_list[index]
 
+        # Find the row indices of the task in google sheets
+        # uses the findall method which searches for the value "task_to_remove"
+        task_rows = to_do_list_worksheet.findall(task_to_remove)
+
+
+        # used help for the code below
+
+        # Remove the task from the google sheets by deleting its row
+        # creates a loop thru "task_rows"
+        for row in task_rows:
+            # This deletes the entire row in google sheets where the task value matches the task_to_remove
+            to_do_list_worksheet.delete_rows(row.row)
+
+        if task_rows:
+            print(f"Task '{task_to_remove}' has been successfully removed")
+        else:
+            print("Task not found in to-do list")
 
 
 
