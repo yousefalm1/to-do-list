@@ -84,7 +84,7 @@ def remove_task():
         task_to_remove = input("Enter the task to remove: ")
 
         # Create a list to store the indices of task to remove from the local list 
-        task_to_remove_indices = []
+        task_to_remove_indices = [] 
 
         # Loop through each item in the "to_do_list" one by one 
         for index, task_details in enumerate(to_do_list):
@@ -92,6 +92,14 @@ def remove_task():
             if task_details["Task"] == task_to_remove:
                 # if it is true which means the current task matches the task that the user wants removed then it adds the index of the task to the "task_to_remove_indices" list
                 task_to_remove_indices.append(index)
+
+
+        # Remove the task from the local list
+
+        # Loop thru the task_to_remove_indices list in reverse
+        for index in reversed(task_to_remove_indices):
+            del to_do_list[index]
+
 
 
 
