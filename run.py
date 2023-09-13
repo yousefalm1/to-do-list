@@ -61,65 +61,52 @@ def add_task():
         print(f"An error occured: {e}")
 
 
+
 # def remove_task():
 #     """
 #     Function to remove a task from the to-do list
 #     """
-#     # User enters the task they wish to remove and that will be stored in "task"
-#     task = input("Enter the task to remove: ")
-#     # checks if the  what the user inputed is in "to_do_list"
-#     # If the task is present in the "to_do_list" the code below would run which will remove the task
-#     if task in to_do_list:
-#         to_do_list_remove(task)
-#     # If task is not found in the "to_do_list" it will print this statement out.
-#     else:
-#         print("Task not found in the to-do list")
+#     try:
+#         # User enters the task they want to remove, and this will be stored in "Task_to_remove"
+#         task_to_remove = input("Enter the task to remove: ")
 
-def remove_task():
-    """
-    Function to remove a task from the to-do list
-    """
-    try:
-        # User enters the task they want to remove, and this will be stored in "Task_to_remove"
-        task_to_remove = input("Enter the task to remove: ")
+#         # Create a list to store the indices of task to remove from the local list 
+#         task_to_remove_indices = [] 
 
-        # Create a list to store the indices of task to remove from the local list 
-        task_to_remove_indices = [] 
-
-        # Loop through each item in the "to_do_list" one by one 
-        for index, task_details in enumerate(to_do_list):
-            # check if "Task" value of the task_details dict is equal to what user wants to remove
-            if task_details["Task"] == task_to_remove:
-                # if it is true which means the current task matches the task that the user wants removed then it adds the index of the task to the "task_to_remove_indices" list
-                task_to_remove_indices.append(index)
+#         # Loop through each item in the "to_do_list" one by one 
+#         for index, task_details in enumerate(to_do_list):
+#             # check if "Task" value of the task_details dict is equal to what user wants to remove
+#             if task_details["Task"] == task_to_remove:
+#                 # if it is true which means the current task matches the task that the user wants removed then it adds the index of the task to the "task_to_remove_indices" list
+#                 task_to_remove_indices.append(index)
 
 
-        # Remove the task from the local list
+#         # Remove the task from the local list
 
-        # Loop thru the task_to_remove_indices list in reverse
-        for index in reversed(task_to_remove_indices):
-            del to_do_list[index]
+#         # Loop thru the task_to_remove_indices list in reverse
+#         for index in reversed(task_to_remove_indices):
+#             del to_do_list[index]
+ 
+#         # Find the row indices of the task in google sheets
+#         # uses the findall method which searches for the value "task_to_remove"
+#         task_rows = to_do_list_worksheet.findall(task_to_remove)
 
-        # Find the row indices of the task in google sheets
-        # uses the findall method which searches for the value "task_to_remove"
-        task_rows = to_do_list_worksheet.findall(task_to_remove)
 
+#         # used help for the code below
 
-        # used help for the code below
+#         # Remove the task from the google sheets by deleting its row
+#         # creates a loop thru "task_rows"
+#         for row in task_rows:
+#             # This deletes the entire row in google sheets where the task value matches the task_to_remove
+#             to_do_list_worksheet.delete_row(row.row)
 
-        # Remove the task from the google sheets by deleting its row
-        # creates a loop thru "task_rows"
-        for row in task_rows:
-            # This deletes the entire row in google sheets where the task value matches the task_to_remove
-            to_do_list_worksheet.delete_rows(row.row)
+#         if task_rows:
+#             print(f"Task '{task_to_remove}' has been successfully removed")
+#         else:
+#             print("Task not found in to-do list")
 
-        if task_rows:
-            print(f"Task '{task_to_remove}' has been successfully removed")
-        else:
-            print("Task not found in to-do list")
-
-    except Exception as e:
-        print(f"An error occured: {e}")
+#     except Exception as e:
+#         print(f"An error occured: {e}")
 
 
 
@@ -127,20 +114,23 @@ def display_list():
     """
     Function to display the to-do list
     """
-    # Checks if the "to_do_list" is empty, if it is print the statement below
-    if not to_do_list:
-        print("Your to-do list is empty.")
-    # If "to_do_list" is not empty the code below will run
-    else:
-        print("To-DO List:")
-        # This keeps track of the task numbers in the "to_do_list"
-        count = 1
-        # This for loop iterates over each item the user submited in the "to_do_list" and assigns it to "task"
-        for task in to_do_list:
-            # Inside the loop the print line it prints "1. Task 1", "2. Task 2" ....
-            print(f"{count}. {task}")
-            # After printing each task the count goes up by 1 for the next task
-            count += 1
+    try:
+        # Checks if the "to_do_list" is empty, if it is print the statement below
+        if not to_do_list:
+            print("Your to-do list is empty.")
+        # If "to_do_list" is not empty the code below will run
+        else:
+            print("To-DO List:")
+            # This keeps track of the task numbers in the "to_do_list"
+            count = 1
+            # This for loop iterates over each item the user submited in the "to_do_list" and assigns it to "task"
+            for task in to_do_list:
+                # Inside the loop the print line it prints "1. Task 1", "2. Task 2" ....
+                print(f"{count}. {task}")
+                # After printing each task the count goes up by 1 for the next task
+                count += 1
+    except Exception as e:
+        print(f"An error occured: {e}")
 
 
 def main():
