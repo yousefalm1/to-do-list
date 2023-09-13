@@ -17,6 +17,7 @@ to_do_list_worksheet = SHEET.worksheet('Sheet1')
 # creates an empty list to store the tasks the user inputs
 to_do_list = []
 
+
 def display_welcome_message():
     """
     Function to display a welcome message
@@ -36,7 +37,6 @@ def add_task():
         # User enter due date for task which is optional
         due_date = input("Enter the due date (optional) (__/__/__): ")
 
-
         # creates a dictionary to show the task and the due date to add to the local to-do list
         task_details = {
             "Task": task,
@@ -50,43 +50,49 @@ def add_task():
         # Create a list with task and due date
         task_data = [task, due_date if due_date else "No due date"]
         # By using append rows to add a new row to the google
-        to_do_list_worksheet.append_rows([task_data]) 
+        to_do_list_worksheet.append_rows([task_data])
 
         # Print Success message
-        print(f"Tast '{task} has been successfully added to the to-do list and Google Sheets.")
+        print(
+            f"Tast '{task} has been successfully added to the to-do list and Google Sheets.")
 
     #  if an excpetion is raised within the try block it will print "An error occured"
     except Exception as e:
         print(f"An error occured: {e}")
 
 
+# def remove_task():
+#     """
+#     Function to remove a task from the to-do list
+#     """
+#     # User enters the task they wish to remove and that will be stored in "task"
+#     task = input("Enter the task to remove: ")
+#     # checks if the  what the user inputed is in "to_do_list"
+#     # If the task is present in the "to_do_list" the code below would run which will remove the task
+#     if task in to_do_list:
+#         to_do_list_remove(task)
+#     # If task is not found in the "to_do_list" it will print this statement out.
+#     else:
+#         print("Task not found in the to-do list")
+
 def remove_task():
     """
     Function to remove a task from the to-do list
     """
     try:
-        # User enters the task they wish to remove and that will be stored in "task"
-        task = input("Enter the task to remove: ")
+        # User enters the task they want to remove, and this will be stored in "Task_to_remove"
+        task_to_remove = input("Enter the task to remove: ")
 
-        # Check if the the task is present in the local to-do list and removes it if its present
+        # Create a list to store the indices of task to remove from the local list 
+        task_to_remove_indices = []
 
-        # Loops through each item in "to_do_list" one by one
-        for task_detials in to_do_list:
-            # Checks if "Task" value of the task_detials dict is equal to what the user wants to remove 
-            if task_detials["Task"] == task_to_remove:
-                to_do_list.remove(task_detials)
-        
+        # Loop through each item in the "to_do_list" one by one 
+        for index, task_details in enumerate(to_do_list):
+            # check if "Task" value of the task_details dict is equal to what user wants to remove
+            if task_details["Task"] == task_to_remove:
+                # if it is true which means the current task matches the task that the user wants removed then it adds the index of the task to the "task_to_remove_indices" list
+                task_to_remove_indices.append(index)
 
-
-
-
-    # checks if the  what the user inputed is in "to_do_list"
-    # If the task is present in the "to_do_list" the code below would run which will remove the task
-    if task in to_do_list:
-        to_do_list_remove(task)
-    # If task is not found in the "to_do_list" it will print this statement out.
-    else:
-        print("Task not found in the to-do list")
 
 
 
@@ -110,40 +116,38 @@ def display_list():
             count += 1
 
 
-
 def main():
     """
     Function to run the to-do list
     """
-    display_welcome_message()
-
 #  Creates an infinite loop until the user chooses to quits
-while True:
-    # Print the options so the user knows what to pick
-    print("\nOptions.")
-    print("1. Add a task")
-    print("2. Remove a task")
-    print("3. Display to-do-list")
-    print("4. Quit")
+    while True:
+        display_welcome_message()
+        # Print the options so the user knows what to pick
+        print("\nOptions.")
+        print("1. Add a task")
+        print("2. Remove a task")
+        print("3. Display to-do-list")
+        print("4. Quit")
 
-    # The number the user input will be assigned to "Choice"
-    choice = input("Enter Your choice:")
+        # The number the user input will be assigned to "Choice"
+        choice = input("Enter Your choice:")
 
-    # Checks what number the user inputed and calls the function linked to that number
-    if choice == "1":
-        # Calls the fuction to add a task
-        add_task()
-    elif choice == "2":
-        # Calls the fuction to remove a task
-        remove_task()
-    elif choice == "3":
-        # Calls the fuction to display tasks
-        display_list()
-    elif choice == "4":
-        # Exit the loop and quit
-        break 
-    else:
-        print("Invalid choice. Please try again.")
+        # Checks what number the user inputed and calls the function linked to that number
+        if choice == "1":
+            # Calls the fuction to add a task
+            add_task()
+        elif choice == "2":
+            # Calls the fuction to remove a task
+            remove_task()
+        elif choice == "3":
+            # Calls the fuction to display tasks
+            display_list()
+        elif choice == "4":
+            # Exit the loop and quit
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
 
 main()
