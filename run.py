@@ -32,10 +32,10 @@ def add_task():
     # try block to catch any potential errors
     try:
         # User enters the task and the task the user inputed is stored in "task"
-        task = input("Enter the task: ")
+        task = input("Enter the task:\n")
 
         # User enter due date for task which is optional
-        due_date = input("Enter the due date (optional) (__/__/__): ")
+        due_date = input("Enter the due date (optional) (__/__/__):\n")
 
         # creates a dictionary to show the task and the due date to add to the local to-do list
         task_details = {
@@ -149,7 +149,7 @@ def main():
             print("4. Quit")
 
             # The number the user input will be assigned to "Choice"
-            choice = input("Enter Your choice:")
+            choice = input("Enter Your choice:\n")
 
             # Checks what number the user inputed and calls the function linked to that number
             if choice == "1":
