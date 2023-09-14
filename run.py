@@ -89,6 +89,18 @@ def remove_task():
 
                 del to_do_list[index_to_remove]
             
+            # Remove from google sheets
+
+            # Using findall to search the google sheets for the task to remove 
+            task_rows = to_do_list_worksheet.findall(task_to_remove)
+
+            # A loop that goes over the all the matching rows
+            for row in task_rows:
+                # Deletes the entier row in google sheets 
+                to_do_list_worksheet.delete_row(row.row)
+
+
+
 
 
 def display_list():
