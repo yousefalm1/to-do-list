@@ -61,52 +61,16 @@ def add_task():
         print(f"An error occured: {e}")
 
 
-
-# def remove_task():
-#     """
-#     Function to remove a task from the to-do list
-#     """
-#     try:
-#         # User enters the task they want to remove, and this will be stored in "Task_to_remove"
-#         task_to_remove = input("Enter the task to remove: ")
-
-#         # Create a list to store the indices of task to remove from the local list 
-#         task_to_remove_indices = [] 
-
-#         # Loop through each item in the "to_do_list" one by one 
-#         for index, task_details in enumerate(to_do_list):
-#             # check if "Task" value of the task_details dict is equal to what user wants to remove
-#             if task_details["Task"] == task_to_remove:
-#                 # if it is true which means the current task matches the task that the user wants removed then it adds the index of the task to the "task_to_remove_indices" list
-#                 task_to_remove_indices.append(index)
-
-
-#         # Remove the task from the local list
-
-#         # Loop thru the task_to_remove_indices list in reverse
-#         for index in reversed(task_to_remove_indices):
-#             del to_do_list[index]
- 
-#         # Find the row indices of the task in google sheets
-#         # uses the findall method which searches for the value "task_to_remove"
-#         task_rows = to_do_list_worksheet.findall(task_to_remove)
-
-
-#         # used help for the code below
-
-#         # Remove the task from the google sheets by deleting its row
-#         # creates a loop thru "task_rows"
-#         for row in task_rows:
-#             # This deletes the entire row in google sheets where the task value matches the task_to_remove
-#             to_do_list_worksheet.delete_row(row.row)
-
-#         if task_rows:
-#             print(f"Task '{task_to_remove}' has been successfully removed")
-#         else:
-#             print("Task not found in to-do list")
-
-#     except Exception as e:
-#         print(f"An error occured: {e}")
+def remove_task():
+    """
+    Function to remove a task from the to-do list by index
+    """
+    try:
+        # Display the current to-do list with indices
+        print("Current To-Do List:")
+        # A for loop to iterate through "to_do_list" and prints each tasks index and task name
+        for index task_details in enumerate(to_do_list):
+            print(f"{index + 1}. {task_details['Task']}")
 
 
 
