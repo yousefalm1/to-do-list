@@ -22,7 +22,7 @@ def display_welcome_message():
     """
     Function to display a welcome message
     """
-    print("Welcome to your own personal TO-DO List")
+    print("Welcome to your own personal TO-DO List\n")
 
 
 def add_task():
@@ -66,13 +66,13 @@ def remove_task():
     """
     try:
         # Display the current to-do list with indices
-        print("Current To-Do List:")
+        print("Current To-Do List:\n")
         # A for loop to iterate through "to_do_list" and prints each task's index and task name
         for index, task_details in enumerate(to_do_list):
             print(f"{index + 1}. {task_details['Task']}")
 
         # User is told to enter the index of the task they want to remove
-        index_to_remove = input("Enter the index of the task to remove:\n ")
+        index_to_remove = input("Enter the index of the task to remove:\n")
         # Check if the what the user inputted is valid (using isdigit which makes sure the input is a number)
         if index_to_remove.isdigit():
             # Converts what the user inputted to an integer then adjust it to start at 0
@@ -95,9 +95,9 @@ def remove_task():
                 del to_do_list[index_to_remove]
 
                 print(
-                    f"Task '{task_to_remove}' has been successfully been removed")
+                    f"Task '{task_to_remove}' has been successfully been removed\n")
             else:
-                print("Invalid Index. Please Enter a valid index")
+                print("Invalid Index. Please Enter a valid inde\n")
         # This is raised when the converting to an integer fails
     except ValueError:
         print("Invalid input. Please enter a valid integer.")
@@ -114,10 +114,10 @@ def display_list():
     try:
         # Checks if the "to_do_list" is empty, if it is print the statement below
         if not to_do_list:
-            print("Your to-do list is empty.")
+            print("Your to-do list is empty.\n")
         # If "to_do_list" is not empty the code below will run
         else:
-            print("To-DO List:")
+            print("To-DO List:\n")
             # This keeps track of the task numbers in the "to_do_list"
             count = 1
             # This for loop iterates over each item the user submited in the "to_do_list" and assigns it to "task"
@@ -139,7 +139,7 @@ def main():
         while True:
             display_welcome_message()
             # Print the options so the user knows what to pick
-            print("\nOptions.")
+            print("\Menu:")
             print("1. Add a task")
             print("2. Remove a task")
             print("3. Display to-do-list")
