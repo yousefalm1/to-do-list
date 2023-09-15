@@ -89,12 +89,35 @@ When you launch the application, you will be met with a welcome message and a me
 ![Quit](assets/quit.png)
 
 
-# Deployment 
 
-This project was deployed using Code Institute’s mock terminal for Heroku.
+
+
+
+
+
+
+
+
+
+
+
+
+# Deployment 
+I used Codeanywhere as the development environment for this to-do list project.  Regular commits were pushed to GitHub during the creation of the to-do list to track the development stage. The project was deployed on Heroku using Code Institue's mock termianl.
 
 Steps for deployment:
-- Clone this
+- I created a Heroku account using the student pack provided by Code Institute.
+- Next, I clicked on "Create new app" in the Heroku dashboard.
+- After clicking "Create new app," I chose an app name and selected my region, then clicked "Create App."
+- Once the app was created, I navigated to the settings and scrolled down to the "Config Vars" section. I clicked to reveal config vars and added "CREDS" as the "KEY." In the "Value" field, I copied and pasted the entire contents of the creds.json file and clicked "Add."
+- I then scrolled down to the "Buildpacks" section and added both Python and Node.js as buildpacks.
+- After adding the buildpacks, I went to the "Deploy" tab and scrolled down to the "Connect to GitHub" section. I clicked on "Connect to GitHub."
+- Once connected, I searched for the to-do list repository and connected it to my Heroku app.
+- With everything set up, I enabled automatic deploys.
+- Heroku began deploying the to-do list application.
+- Once the deployment was completed, Heroku provided the URL.
+https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/
+
 
 # Technologies Used
 
