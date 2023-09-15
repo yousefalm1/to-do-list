@@ -12,15 +12,9 @@
 
 
 
-
-
-
-
-
-
 # Repository 
 
-[GitHub Repository]([GitHub Repository](https://github.com/hypergeek-dev/cipher-forge))
+[GitHub Repository](https://github.com/hypergeek-dev/cipher-forge)
 
 Live at: [https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/](https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/)
 
@@ -90,8 +84,41 @@ When you launch the application, you will be met with a welcome message and a me
 
 ## Quit Feature
 
-- When the user decides to quit the application, they can select the quit option which will ensure the uer exits the application in a safe and efficient way and displays a confirmation message.
+- When the user decides  to exit the application, they can do so by selecting the quit option, which ensures the user exits the application safely and efficiently and displays a confirmation message.
 
+![Quit](assets/quit.png)
+
+
+# Deployment 
+
+This project was deployed using Code Institute’s mock terminal for Heroku.
+
+Steps for deployment:
+- Clone this
+
+# Technologies Used
+
+- Python
+- gspread
+- Google Sheets API
+- Google OAuth2
+
+# User Stories
+
+- As a user, I want to be able to add tasks to my to-do list, including optional due dates, so I can keep track of my tasks efficiently.
+- As a user, I want to remove tasks from my to-do list when they are completed or no longer relevant, ensuring my list stays up to date.
+- As a user, I want to easily view my current to-do list, allowing me to see all the tasks I need to complete.
+- As a user, I want the option to quit the program when I'm done using it, ensuring a smooth and convenient experience.
+
+
+# Testing
+
+- PEP8 
+    - No errors were found using  https://www.pythonchecker.com/
+
+- Bugs 
+    - The first bug was in the remove task function, which was indentation of the try and except blocks this made the remove task function not work. I fixed this re reading the code an making sure the indention was correct
+    - Another bug was the google spreadsheet not working so the tasks were not being updated to the worksheet since i forgot to input the email to the google sheet worksheet, the way i fixed was by rewatching love sandwiches project 
 
 
 
