@@ -96,7 +96,7 @@ def remove_task():
                 print(
                     f"Task '{task_to_remove}' has been successfully been removed\n")
             else:
-                print("Invalid Index. Please Enter a valid inde\n")
+                print("Invalid Index. Please Enter a valid index\n")
         # This is raised when the converting to an integer fails
     except ValueError:
         print("Invalid input. Please enter a valid integer.")

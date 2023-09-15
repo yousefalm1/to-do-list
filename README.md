@@ -67,7 +67,29 @@ When you launch the application, you will be met with a welcome message and a me
 
 ![Success Message](assets/add-task-success.png)
 
-Error Handling: If any errors occur during adding a task, the application will catch and report them.
+- Error Handling: If any errors occur during adding a task, the application will catch and report them.
+
+
+## Remove Task Feature
+
+- Remove Task By Index: When the user selects the remove task option the application will display the users current to-do list with the task indices, which will help the user find the task they want to remove
+
+![Remove Task](assets/remove-task.png)
+
+- Google Sheets Integration: When the user removes a task it not only removes it from the local list but also google sheets.
+
+![Google Sheet Remove Task](assets/google-sheet-remove.png)
+
+- Success Confirmation: After removing a task from the local list and google sheets the application will provide aconfirmation message.
+
+![Remove Task Message](assets/remove-task-message.png)
+
+- Error Handling: If the user enters a wrong index a message will appear stating "Invaid Index" and if an unexpected error occurs the application will catch it and report it.
+
+![Remove Task Error](assets/remove-error.png)
+
+
+
 
 
 
