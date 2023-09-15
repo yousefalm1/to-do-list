@@ -53,8 +53,7 @@ def add_task():
         to_do_list_worksheet.append_rows([task_data])
 
         # Print Success message
-        print(
-            f"Tast '{task} has been successfully added to the to-do list and Google Sheets.")
+        print(f"Task '{task} has been successfully added to the to-do list and Google Sheets.\n")
 
     #  if an excpetion is raised within the try block it will print "An error occured"
     except Exception as e:
@@ -129,6 +128,11 @@ def display_list():
     except Exception as e:
         print(f"An error occured: {e}")
 
+def quit():
+    """
+    Quit to-do list function
+    """
+    print("You have quit the to-do list")
 
 def main():
     """
@@ -139,11 +143,11 @@ def main():
         while True:
             display_welcome_message()
             # Print the options so the user knows what to pick
-            print("\Menu:")
+            print("Menu:\n")
             print("1. Add a task")
             print("2. Remove a task")
             print("3. Display to-do-list")
-            print("4. Quit")
+            print("4. Quit\n")
 
             # The number the user input will be assigned to "Choice"
             choice = input("Enter Your choice:\n")
@@ -160,6 +164,7 @@ def main():
                 display_list()
             elif choice == "4":
                 # Exit the loop and quit
+                quit()
                 break
             else:
                 print("Invalid choice. Please try again.")
