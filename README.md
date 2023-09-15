@@ -36,7 +36,7 @@ When you launch the application, you will be met with a welcome message and a me
 
 # Features
 
-## Welcome Message And Menu
+## Welcome Message And Menu Feature
 - When the user runs the To-Do list they are greeted with a welcome message and a interactive menu with four options to choose from:
     1. Add task
     2. Remove task
@@ -49,7 +49,25 @@ When you launch the application, you will be met with a welcome message and a me
 <br>
 ![Enter wrong input in the menu](assets/menu-wrong-input.png)
 
+## Add Task Feature
 
+- Add New Task: The application  will prompt the user to input the task you want to add.
+
+![Enter Task](assets/add-task.png)
+
+- Add Optional Due Date: The application will also prompt the user to enter a due date for the task which is optional ; if no due date is entered, the task will be recorded as "No due date."
+
+![Enter Due Date ](assets/due-date.png)
+
+- Google Sheet Integration: Every task the user is not only saved locally but also be transferred to a google sheet document.
+
+![Googe Sheet ](assets/google-sheet-add-task.png)
+
+- Success Confirmation: After Adding a task the application will provide a confirmation message, so the user knows that the task has been added both locally and in Google Sheets.
+
+![Success Message](assets/add-task-success.png)
+
+Error Handling: If any errors occur during adding a task, the application will catch and report them.
 
 
 

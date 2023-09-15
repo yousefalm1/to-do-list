@@ -53,7 +53,7 @@ def add_task():
         to_do_list_worksheet.append_rows([task_data])
 
         # Print Success message
-        print(f"Task '{task}' has been successfully added to the to-do list and Google Sheets.\n")
+        print(f"Task: '{task}' has been successfully added to the to-do list and Google Sheets.\n")
 
     #  if an excpetion is raised within the try block it will print "An error occured"
     except Exception as e:
