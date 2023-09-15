@@ -88,8 +88,9 @@ When you launch the application, you will be met with a welcome message and a me
 
 ![Remove Task Error](assets/remove-error.png)
 
+## Quit Feature
 
-
+- When the user decides to quit the application, they can select the quit option which will ensure the uer exits the application in a safe and efficient way and displays a confirmation message.
 
 
 
