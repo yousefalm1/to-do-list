@@ -88,6 +88,36 @@ When you launch the application, you will be met with a welcome message and a me
 
 ![Quit](assets/quit.png)
 
+## Future Features 
+
+
+# Getting Started
+
+## Prerequisites
+
+1. Clone or Download the Repository:
+    - Begin by cloning or downloading this repository and navigate to the project directory.
+2. Install Required Python Libraries:
+    - Install the necessary Python libraries by running the following command in your terminal:
+        ```shell
+        pip install gspread google-auth
+        ```
+3. Obtain Google Drive API Credentials:
+    - To access Google Sheets, you'll need Google Drive API credentials in the form of a JSON file.
+    - Name this file 'creds.json' and store it in the same directory as the code.
+    - Make sure to enable the Google Sheets API for your project.
+
+4. Set Up Google Sheets: 
+    - Create a Google Sheets document to store your to-do list.
+    - Share this Google Sheets document with the Google service account email found in 'creds.json'.
+    - Label the first worksheet in your Google Sheets document as 'Sheet1'.
+
+5. Run the Application:
+    - Open your terminal or command prompt.
+    - Run the application using this command:
+        ```shell
+        python3 run.py
+        ```
 
 
 
@@ -102,7 +132,7 @@ When you launch the application, you will be met with a welcome message and a me
 
 
 
-# Deployment 
+# Development and Deployment
 I used Codeanywhere as the development environment for this to-do list project.  Regular commits were pushed to GitHub during the creation of the to-do list to track the development stage. The project was deployed on Heroku using Code Institue's mock termianl.
 
 Steps for deployment:
@@ -143,5 +173,7 @@ https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/
     - The first bug was in the remove task function, which was indentation of the try and except blocks this made the remove task function not work. I fixed this re reading the code an making sure the indention was correct
     - Another bug was the google spreadsheet not working so the tasks were not being updated to the worksheet since i forgot to input the email to the google sheet worksheet, the way i fixed was by rewatching love sandwiches project 
 
+- Remaining Bugs 
+    - No bugs remaining
 
 
