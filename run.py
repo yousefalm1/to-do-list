@@ -72,34 +72,35 @@ def remove_task():
         for index task_details in enumerate(to_do_list):
             print(f"{index + 1}. {task_details['Task']}")
 
-        # User is told to enter the index of the task they want to remove 
-        index_to_remove = input("Eneter the index of task you want to remove:\n")
+        # User is told to enter the index of the task they want to remove
+        index_to_remove = input(
+            "Eneter the index of task you want to remove:\n")
 
         # Check if the what the user inputed is valid (using isdigit which makes sure the input is a number)
         if index_to_remove.isdigit():
-            # Converts what the user inputed to an interger then adjust it to start at 0 
+            # Converts what the user inputed to an interger then adjust it to start at 0
             index_to_remove = int(index_to_remove) - 1
 
             # len(to_do_list) calculates the number of taksk and returns an interger
             # 0 <= index_to_remove checks if the "index_to_remove" is greater than or equal to 0 to make sure the index is not -ve
             # index_to_remove < len(to_do_list) checks if "index_to_remove" is less than the length of the to_do list to make sure the index is not greater than or equal to the number of tasks
             if 0 <= index_to_remove < len(to_do_list):
-                # 
+                #
                 task_to_remove = to_do_list[index_to_remove]["Task"]
 
-                del to_do_list[index_to_remove]
-            
-            # Remove from google sheets
-
-            # Using findall to search the google sheets for the task to remove 
-            task_rows = to_do_list_worksheet.findall(task_to_remove)
+            # Using findall to search the google sheets for the task to remove
+                task_rows = to_do_list_worksheet.findall(task_to_remove)
 
             # A loop that goes over the all the matching rows
-            for row in task_rows:
-                # Deletes the entier row in google sheets 
-                to_do_list_worksheet.delete_row(row.row)
+                for row in task_rows:
+                # Deletes the entier row in google sheets
+                    to_do_list_worksheet.delete_row(row.row)
+                # Delete task from local list
+                del to_do_list[index_to_remove]
 
-
+                print(f"Task '{task_to_remove}' has been successfully been removed")
+            else:
+                print("Invalid Index. Please Enter a valid index")
 
 
 
