@@ -101,7 +101,13 @@ def remove_task():
                 print(f"Task '{task_to_remove}' has been successfully been removed")
             else:
                 print("Invalid Index. Please Enter a valid index")
-
+                
+        # This is raised when the converting to an interger fails
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+        # This catches an unexpected error 
+        except Exception as e:
+            print(f"An error occurred: {e}")
 
 
 def display_list():
