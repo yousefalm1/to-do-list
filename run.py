@@ -90,7 +90,7 @@ def remove_task():
                 # A loop that goes over all the matching rows
                 for row in task_rows:
                     # Deletes the entire row in google sheets
-                    to_do_list_worksheet.delete_row(row.row)
+                    to_do_list_worksheet.delete_rows(row.row)
                 # Delete task from the local list
                 del to_do_list[index_to_remove]
 
@@ -99,8 +99,8 @@ def remove_task():
             else:
                 print("Invalid Index. Please Enter a valid index")
         # This is raised when the converting to an integer fails
-        except ValueError:
-            print("Invalid input. Please enter a valid integer.")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
     # This catches an unexpected error
     except Exception as e:
         print(f"An error occurred: {e}")
