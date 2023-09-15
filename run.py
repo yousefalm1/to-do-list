@@ -60,7 +60,6 @@ def add_task():
     except Exception as e:
         print(f"An error occured: {e}")
 
-
 def remove_task():
     """
     Function to remove a task from the to-do list by index
@@ -68,46 +67,44 @@ def remove_task():
     try:
         # Display the current to-do list with indices
         print("Current To-Do List:")
-        # A for loop to iterate through "to_do_list" and prints each tasks index and task name
-        for index task_details in enumerate(to_do_list):
+        # A for loop to iterate through "to_do_list" and prints each task's index and task name
+        for index, task_details in enumerate(to_do_list):
             print(f"{index + 1}. {task_details['Task']}")
 
         # User is told to enter the index of the task they want to remove
-        index_to_remove = input(
-            "Eneter the index of task you want to remove:\n")
-
-        # Check if the what the user inputed is valid (using isdigit which makes sure the input is a number)
+        index_to_remove = input("Enter the index of the task to remove:\n ")
+        # Check if the what the user inputted is valid (using isdigit which makes sure the input is a number)
         if index_to_remove.isdigit():
-            # Converts what the user inputed to an interger then adjust it to start at 0
+            # Converts what the user inputted to an integer then adjust it to start at 0
             index_to_remove = int(index_to_remove) - 1
 
-            # len(to_do_list) calculates the number of taksk and returns an interger
-            # 0 <= index_to_remove checks if the "index_to_remove" is greater than or equal to 0 to make sure the index is not -ve
+            # len(to_do_list) calculates the number of tasks and returns an integer
+            # 0 <= index_to_remove checks if the "index_to_remove" is greater than or equal to 0 to make sure the index is not negative
             # index_to_remove < len(to_do_list) checks if "index_to_remove" is less than the length of the to_do list to make sure the index is not greater than or equal to the number of tasks
             if 0 <= index_to_remove < len(to_do_list):
-                #
                 task_to_remove = to_do_list[index_to_remove]["Task"]
 
-            # Using findall to search the google sheets for the task to remove
+                # Using findall to search the google sheets for the task to remove
                 task_rows = to_do_list_worksheet.findall(task_to_remove)
 
-            # A loop that goes over the all the matching rows
+                # A loop that goes over all the matching rows
                 for row in task_rows:
-                # Deletes the entier row in google sheets
+                    # Deletes the entire row in google sheets
                     to_do_list_worksheet.delete_row(row.row)
-                # Delete task from local list
+                # Delete task from the local list
                 del to_do_list[index_to_remove]
 
-                print(f"Task '{task_to_remove}' has been successfully been removed")
+                print(
+                    f"Task '{task_to_remove}' has been successfully been removed")
             else:
                 print("Invalid Index. Please Enter a valid index")
-                
-        # This is raised when the converting to an interger fails
+        # This is raised when the converting to an integer fails
         except ValueError:
             print("Invalid input. Please enter a valid integer.")
-        # This catches an unexpected error 
-        except Exception as e:
-            print(f"An error occurred: {e}")
+    # This catches an unexpected error
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
 
 
 def display_list():
