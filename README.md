@@ -23,9 +23,9 @@ When you launch the application, you will be met with a welcome message and a me
     4. Quit
 - Below the menu options the user will be prompted to input the number corresponding to what they want.
 ![Welcome and menu](assets/menu.png)
-<br>
+
 - When the user enters a number that is not between 1 and 4, it displays a message that says "Invalid choice, Please try again" and displays the welcome message and menu for the user to select again.
-<br>
+
 ![Enter wrong input in the menu](assets/menu-wrong-input.png)
 
 ## Add Task Feature
