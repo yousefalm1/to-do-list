@@ -1,29 +1,14 @@
 # To Do List
 
-----
-
-# Table of Contents
-
-- [Repository](#repository)
-
-
-
-
-
-
 
 # Repository 
 
-[GitHub Repository](https://github.com/hypergeek-dev/cipher-forge)
+[GitHub Repository](https://github.com/yousefalm1/to-do-list)
 
 Live at: [https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/](https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/)
 
-
 # Introduction 
 Welcome to the To-Do list which is a powerful task management tool which is  designed to help you keep track of your tasks and stay organized in your daily life.
-
-
-
 
 # How To Use 
 When you launch the application, you will be met with a welcome message and a menu of options. Select option 1 to add a task, then give a description (e.g., "Complete project report") and, optionally, a due date (e.g., "09/30/2023"). Your task will be put to your local to-do list and, is synchronised with Google Sheets. To delete a task, select option 2, enter the task's index, and it will be removed from your list and Google Sheets, if applicable. Option 3 displays your current tasks together with their indexes and due dates, allowing you to keep track of your to-do list. Finally, option 4 allows you to exit the application once you've completed your tasks management. 
@@ -90,6 +75,10 @@ When you launch the application, you will be met with a welcome message and a me
 
 ## Future Features 
 
+- In the future i can add other options to add task fucntion for example:
+    - Task Priority
+    - Task Notes
+
 
 # Getting Started
 
@@ -119,18 +108,19 @@ When you launch the application, you will be met with a welcome message and a me
         python3 run.py
         ```
 
+# User Stories
 
+- As a user, I want to be able to add tasks to my to-do list, including optional due dates, so I can keep track of my tasks efficiently.
+- As a user, I want to remove tasks from my to-do list when they are completed or no longer relevant, ensuring my list stays up to date.
+- As a user, I want to easily view my current to-do list, allowing me to see all the tasks I need to complete.
+- As a user, I want the option to quit the program when I'm done using it, ensuring a smooth and convenient experience.
 
+# Technologies Used
 
-
-
-
-
-
-
-
-
-
+- Python
+- gspread
+- Google Sheets API
+- Google OAuth2
 
 # Development and Deployment
 I used Codeanywhere as the development environment for this to-do list project.  Regular commits were pushed to GitHub during the creation of the to-do list to track the development stage. The project was deployed on Heroku using Code Institue's mock termianl.
@@ -149,31 +139,27 @@ Steps for deployment:
 https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/
 
 
-# Technologies Used
-
-- Python
-- gspread
-- Google Sheets API
-- Google OAuth2
-
-# User Stories
-
-- As a user, I want to be able to add tasks to my to-do list, including optional due dates, so I can keep track of my tasks efficiently.
-- As a user, I want to remove tasks from my to-do list when they are completed or no longer relevant, ensuring my list stays up to date.
-- As a user, I want to easily view my current to-do list, allowing me to see all the tasks I need to complete.
-- As a user, I want the option to quit the program when I'm done using it, ensuring a smooth and convenient experience.
-
-
 # Testing
 
 - PEP8 
-    - No errors were found using  https://www.pythonchecker.com/
+    - Code was put through https://pep8ci.herokuapp.com/ and the only errors found was line being to long.
+    - Manually testing this project in heroku and local terminal. 
 
 - Bugs 
-    - The first bug was in the remove task function, which was indentation of the try and except blocks this made the remove task function not work. I fixed this re reading the code an making sure the indention was correct
-    - Another bug was the google spreadsheet not working so the tasks were not being updated to the worksheet since i forgot to input the email to the google sheet worksheet, the way i fixed was by rewatching love sandwiches project 
-
+    - The first bug was in the "remove_task" function, where the indentation of the "try" and "except" blocks was incorrect. This caused the "remove_task" function to not work. I fixed this issue by carefully reviewing the code and ensuring that the indentation was correc
+    - The second bug was related to the Google Spreadsheet integration not working, causing the tasks not to be updated in the worksheet. This issue arose because I had forgotten to input the email associated with the Google Sheet worksheet. I resolved this problem by revisiting and referencing the "Love Sandwiches" project.
 - Remaining Bugs 
     - No bugs remaining
+
+# Credits
+
+- Mentor for this project:
+    - Martina Terlevic 
+
+- Online Resourses:
+    1. Used https://medium.com/@dghadge2002/building-a-command-line-menu-in-python-exploring-different-applications-f970a61e6412 to understand how to build a Command Line Menu.
+    2. Used google to reserach on how to use findall() and enumerate() so i can undertand how to manipulate the data within the project
+    3. Used https://www.tutorialstonight.com/reverse-for-loop-python to help understand how to remove tasks from the local list
+    4. Used the love sandwhich example project to learn how to implemnt google sheets to the to-do list
 
 

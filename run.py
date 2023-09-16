@@ -93,8 +93,7 @@ def remove_task():
                 # Delete task from the local list
                 del to_do_list[index_to_remove]
 
-                print(
-                    f"Task '{task_to_remove}' has been successfully been removed\n")
+                print(f"Task '{task_to_remove}' has been successfully been removed\n")
             else:
                 print("Invalid Index. Please Enter a valid index\n")
         # This is raised when the converting to an integer fails
