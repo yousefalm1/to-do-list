@@ -82,6 +82,11 @@ When you launch the application, you will be met with a welcome message and a me
 
 # Getting Started
 
+## Flow Diagram
+
+![Flow Diagram](assets/flow.png)
+
+
 ## Prerequisites
 
 1. Clone or Download the Repository:
