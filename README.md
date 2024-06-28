@@ -5,7 +5,7 @@
 
 [GitHub Repository](https://github.com/yousefalm1/to-do-list)
 
-Live at: [https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/](https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/)
+Live at: [https://to-do-list12-84a279849a7a.herokuapp.com/](https://to-do-list12-84a279849a7a.herokuapp.com/)
 
 # Introduction 
 Welcome to the To-Do list which is a powerful task management tool which is  designed to help you keep track of your tasks and stay organized in your daily life.
@@ -141,8 +141,7 @@ Steps for deployment:
 - With everything set up, I enabled automatic deploys.
 - Heroku began deploying the to-do list application.
 - Once the deployment was completed, Heroku provided the URL.
-https://to-do-list-p3-d2dfb93e25e8.herokuapp.com/
-
+https://to-do-list12-84a279849a7a.herokuapp.com/
 
 # Testing
 
